@@ -1,6 +1,6 @@
 /* STM32_LS.ld Code */
 
-/* 1. Definisikan Kapasitas Memori STM32F411CEU6 */
+/* 1. Definition the address and the size of the MEMORY */
 MEMORY
 {
     /* Nama(Atribut) : ORIGIN = Alamat Start, LENGTH = Ukuran */
@@ -8,35 +8,35 @@ MEMORY
     SRAM(rwx) : ORIGIN = 0x20000000, LENGTH = 128K
 }
 
-/* 2. Definisikan Penempatan Section */
+/* 2. Definition the place of the Sections */
 SECTIONS
 {
-    /* Bagian KODE (Program) diletakkan di FLASH */
+    /* Our main program code is placed into FLASH */
     .text :
     {
-        *(.isr_vector)    /* Tabel Interupsi (Wajib di paling awal) */
-        *(.text)          /* Semua kode program .c Anda */
-        *(.rodata)        /* Data konstanta (Read-Only) */
-        _etext = .;       /* Tandai alamat akhir kode di Flash */
+        *(.isr_vector)    /* Interuption table must in first place */
+        *(.text)          /* ALl of main.c code saved at .text */
+        *(.rodata)        /* Constant data like const uint8_t pin = 13; (Read-Only) */
+        _etext = .;       /* The last address of the code in FLASH */
     } > FLASH
 
-    /* _sidata adalah alamat awal data di Flash yang akan dikopi ke RAM */
+    /* _sidata is the first address the the data in FLASH that will copied into SRAM*/
     _sidata = LOADADDR(.data);
 
-    /* Bagian DATA (Variabel Global Berisi Nilai, misal: int x = 10) */
-    /* Disimpan di Flash (AT > FLASH) tapi dijalankan di RAM */
+    /* DATA Section (Global Variable contains Value, like: uint32_t delay_value = 1000000;) */
+    /* Save in FLASH (AT > FLASH) but runs in RAM*/
     .data :
     {
-        _sdata = .;       /* Start data di RAM */
+        _sdata = .;       /* Start data in RAM */
         *(.data)
-        _edata = .;       /* End data di RAM */
+        _edata = .;       /* End data in RAM */
     } > SRAM AT > FLASH
 
-    /* Bagian BSS (Variabel Global Bernilai Nol, misal: int y) */
+    /* BSS Section (contains global Variabel that have value 0, like uint32_t x;) */
     .bss :
     {
-        _sbss = .;        /* Start bss di RAM */
+        _sbss = .;        /* Start bss in RAM */
         *(.bss)
-        _ebss = .;        /* End bss di RAM */
+        _ebss = .;        /* End bss in RAM */
     } > SRAM
 }
