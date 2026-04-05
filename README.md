@@ -24,4 +24,4 @@ MEMORY
 6. Use: make (to build your project) in your terminal.
 
 
-Subscribe my YouTube channel[https://youtube.com/@PenuDjira]
+Subscribe my YouTube channel (Penu Djira)[https://youtube.com/@PenuDjira]
