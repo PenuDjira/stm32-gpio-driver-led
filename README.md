@@ -11,7 +11,7 @@ In this project we build Blinki LED with simple GPIO Driver that i build by myse
 ```c 
 MEMORY
 {
-    /* Nama(Atribut) : ORIGIN = Alamat Start, LENGTH = Ukuran */
+    /* Name(Atribut) : ORIGIN = Start Address, LENGTH = Size */
     FLASH(rx) : ORIGIN = 0x08000000, LENGTH = 512K
     SRAM(rwx) : ORIGIN = 0x20000000, LENGTH = 128K
 }
