@@ -3,7 +3,7 @@
 /* 1. Definition the address and the size of the MEMORY */
 MEMORY
 {
-    /* Nama(Atribut) : ORIGIN = Alamat Start, LENGTH = Ukuran */
+    /* Name (Attribute): ORIGIN = Start Address, LENGTH = Size */
     FLASH(rx) : ORIGIN = 0x08000000, LENGTH = 512K
     SRAM(rwx) : ORIGIN = 0x20000000, LENGTH = 128K
 }
