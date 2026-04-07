@@ -16,6 +16,8 @@
 void GPIO_ClockEnable(void); // Function to enable the clock for GPIOC peripheral
 void GPIO_SetOutput(uint8_t pin); // Function to set a specific pin as output. The pin number is passed as an argument.
 void GPIO_Toggle(uint8_t pin); // Function to toggle the state of a specific pin. The pin number is passed as an argument.
+void GPIO_SetPin(uint8_t pin); // Function to set a specific pin to high. The pin number is passed as an argument.
+void GPIO_ClearPin(uint8_t pin); // Function to clear the state of a specific pin (set it to low). The pin number is passed as an argument.
 
 #endif // End of include guard
 

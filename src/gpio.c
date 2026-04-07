@@ -15,3 +15,11 @@ void GPIO_Toggle(uint8_t pin)
 {
 	GPIOC_ODR ^= (1U << pin);
 }
+
+void GPIO_SetPin(uint8_t pin){
+	GPIOC_ODR |= (1U << pin);
+}
+
+void GPIO_ClearPin(uint8_t pin){
+	GPIOC_ODR &= ~(1U << pin);
+}
