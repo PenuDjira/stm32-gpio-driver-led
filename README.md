@@ -31,15 +31,15 @@ MEMORY
     ```
 2. How to use these functions?
     If you want to use these function without any other abstractions like i do in my main code, you can write the code like this:
-```c
-    while(1)
-    {
-        GPIO_SetPin(PINx); // Set the Pin. Use the pin you define in your project
-        delay(delay_value);
-        GPIO_ClearPin(PINx); // Clear the Pin
-        delay(delay_value);
-    }
-```
+    ```c
+        while(1)
+        {
+            GPIO_SetPin(PINx); // Set the Pin. Use the pin you define in your project
+            delay(delay_value);
+            GPIO_ClearPin(PINx); // Clear the Pin
+            delay(delay_value);
+        }
+    ```
 
     This simple code will help you build your own led Blink with pure bare metal and use the GPIO Driver.
 
