@@ -40,7 +40,8 @@ MEMORY
         delay(delay_value);
     }
 ```
-    this simple code will help you build your own led Blink with pure bare metal and use the GPIO Driver.
+
+    This simple code will help you build your own led Blink with pure bare metal and use the GPIO Driver.
 
 3. WARNING!!! 
     In some board, the BUILT IN led is ACTIVE LOW, so it means, when you clear the BIT of the PIN, the PIN will get 0 BIT and the LED will TURN ON. ACTIVE LOW LED --> CLEAR BIT --> THE STATE OF THE BIT BECOME 0 --> PIN GET LOW VOLTAGE --> LED TURN ON.
