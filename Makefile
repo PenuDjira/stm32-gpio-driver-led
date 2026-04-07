@@ -2,7 +2,7 @@
 # 1. Configurate Toolchain
 CC = arm-none-eabi-gcc
 OBJCOPY = arm-none-eabi-objcopy
-CFLAGS = -mcpu=cortex-m4 -mthumb -std=gnu11 -O0 -g -Iinc
+CFLAGS = -mcpu=cortex-m4 -mthumb -std=gnu11 -O0 -g Iinc
 LDFLAGS = -T scripts/stm32_ls.ld -nostdlib
 
 # 2. The main target
